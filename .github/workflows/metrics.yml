@@ -1,8 +1,8 @@
-name: Using chartist charts
+name: Labels
 uses: lowlighter/metrics@latest
 with:
-  filename: metrics.plugin.stargazers.chartist.svg
-  token: ${{ secrets.METRICS_TOKEN }}
+  filename: metrics.plugin.topics.svg
+  token: NOT_NEEDED
   base: ""
-  plugin_stargazers: yes
-  plugin_stargazers_charts_type: chartist
+  plugin_topics: yes
+  plugin_topics_limit: 12
