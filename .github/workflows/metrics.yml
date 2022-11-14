@@ -17,4 +17,4 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           
           plugin_stargazers: yes
-
+          plugin_stargazers_charts: yes
