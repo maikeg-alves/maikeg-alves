@@ -16,6 +16,9 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           
+          #Core
+          filename: github-topics.*
+          
           #PLUGIN TOPICS
           plugin_topics: yes
           plugin_topics_limit: 0
@@ -30,6 +33,7 @@ jobs:
 
           # Core
           config_timezone: America/Sao_Paulo
+          filename: github-habits.*
 
           
           # PLUGIN HABITS                     
