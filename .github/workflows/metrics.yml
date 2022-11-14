@@ -15,8 +15,8 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           
           # Display
-          template: classic
-          base: header
+          #template: classic
+          #base: header
           
          # Display all unlocked achievements (no limit)
           
