@@ -35,16 +35,16 @@ jobs:
           plugin_topics_limit: 0
           plugin_topics_mode: icons
 
-github-habits:
-  steps:
-    - uses: lowlighter/metrics@latest
-      with:
-        filename: metrics.plugin.habits.facts.svg
-        token: ${{ secrets.METRICS_TOKEN }}
+   github-habits:
+     steps:
+     - uses: lowlighter/metrics@latest
+       with:
+         filename: metrics.plugin.habits.facts.svg
+         token: ${{ secrets.METRICS_TOKEN }}
 
         #plugins
 
-        plugin_habits: yes
-        plugin_habits_facts: yes
-        plugin_habits_charts: no
-        config_timezone: America/Sao_Paulo
+         plugin_habits: yes
+         plugin_habits_facts: yes
+         plugin_habits_charts: no
+         config_timezone: America/Sao_Paulo
