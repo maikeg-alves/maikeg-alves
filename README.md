@@ -2,4 +2,4 @@
 
 ![Metrics](/github-metrics.svg)
 
-![me](/metrics.plugin.stargazers.svg)
+![Using classic charts](/metrics.plugin.stargazers.svg)
