@@ -35,7 +35,3 @@ jobs:
           plugin_habits_facts: no        # Do not display facts section
           plugin_habits_charts: yes      # Display charts section
           plugin_habits_trim: no         # Do not trim unused hours on daily chart
-          
-          plugin_people: yes
-          plugin_people_types: followers     # Display followers section
-          plugin_people_shuffle: yes         # Shuffle for varied output
