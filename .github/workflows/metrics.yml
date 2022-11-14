@@ -1,41 +1,38 @@
 name: Metrics
 on:
-  # Schedule daily updates
-  schedule: [{ cron: "0 0 * * *" }]
-  # (optional) Run workflow manually
+  # Schedule updates (each day)
+  schedule:
+    - cron: "0 0 * * *"
   workflow_dispatch:
-  # (optional) Run workflow when pushing on master/main
-  push: { branches: ["master", "main"] }
+  push:
+    branches:
+      - master
+      - main
 jobs:
-  github-metrics:
+  github-topics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          #PLUGIN TOPICS
+          plugin_topics: yes
+          plugin_topics_limit: 0
+          plugin_topics_mode: icons
+          
+  github-habits:
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Display
-          #template: classic
-          #base: header
+          # Core
+          config_timezone: America/Sao_Paulo
 
-          # Display all unlocked achievements (no limit)
-
-          #plugin_introduction: yes
-
-          plugin_habits: yes
-          plugin_habits_from: 1000 # Use 1000 events to compute habits
-          plugin_habits_days: 30 # Keep only events from last 30 days
-          plugin_habits_facts: no # Do not display facts section
-          plugin_habits_charts: yes # Display charts section
-          plugin_habits_trim: no # Do not trim unused hours on daily chart
-
-          # topics
-
-          plugin_topics: yes
-          plugin_topics_limit: 0
-          plugin_topics_mode: icons
           
+          # PLUGIN HABITS                     
           plugin_habits: yes
           plugin_habits_facts: yes
           plugin_habits_charts: no
-          config_timezone: America/Sao_Paulo
