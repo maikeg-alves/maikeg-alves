@@ -1,16 +1,12 @@
 
 <div>
    <div>
-      <h2>hello i'm Maike </h2>
+      <h1>hello i'm Maike :wave:</h2>
    </div>
 </div>
 
 <div> 
-  <div>
-     <h2>
-       Stargazes :star:
-    </h2>
-  </div>
+  
    <div align="center">
       <img src="/github-habits.svg" alt="Topic" width="700">
    </div>
