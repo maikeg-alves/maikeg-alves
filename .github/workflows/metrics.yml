@@ -24,8 +24,7 @@ jobs:
           template: classic
           base: header
           config_timezone: America/Sao_Paulo
-          
-  github-stargazers:
+  github-habits:
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
@@ -34,16 +33,20 @@ jobs:
 
           # Core
           config_timezone: America/Sao_Paulo
-          filename: github-stargazers.*
+          filename: github-habits.*
 
+          # Options
           # Options
           template: classic
           base: ""
 
-          plugin_stargazers: yes
-          plugin_stargazers_charts: yes
-          plugin_stargazers_charts_type: classic
-          plugin_stargazers_worldmap_sample: 30
+          plugin_habits: yes
+          plugin_habits_charts: yes
+          plugin_habits_charts_type: chartist
+          plugin_habits_days: 14
+          plugin_habits_from: 200
+          plugin_habits_languages_limit: 8
+          plugin_habits_languages_threshold: 0%
           
   github-topics:
     runs-on: ubuntu-latest
@@ -52,7 +55,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # GitHub token
+          # Current configuration doesn't require a GitHub token
           token: NOT_NEEDED
 
           #Core
