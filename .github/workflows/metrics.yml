@@ -27,6 +27,13 @@ jobs:
           plugin_topics_limit: 0
           plugin_topics_mode: icons
           
+          #ACHIEVEMENTS
+          plugin_achievements: yes
+          plugin_achievements_threshold: X
+          plugin_achievements_secrets: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_limit: 0
+          
   github-habits:
     runs-on: ubuntu-latest
     steps:
