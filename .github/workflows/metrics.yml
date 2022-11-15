@@ -17,6 +17,9 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           
           #Core
+          user: maikeg-alves
+          config_timezone: America/Sao_Paulo
+          committer_message: "🏆 Update Achievements"
           filename: github-topics.*
           
           #PLUGIN TOPICS
