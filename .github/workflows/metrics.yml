@@ -24,6 +24,7 @@ jobs:
           template: classic
           base: header
           config_timezone: America/Sao_Paulo
+          
   github-stargazers:
     runs-on: ubuntu-latest
     steps:
@@ -35,7 +36,6 @@ jobs:
           config_timezone: America/Sao_Paulo
           filename: github-stargazers.*
 
-          # Options
           # Options
           template: classic
           base: ""
@@ -52,7 +52,7 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Current configuration doesn't require a GitHub token
+          # GitHub token
           token: NOT_NEEDED
 
           #Core
