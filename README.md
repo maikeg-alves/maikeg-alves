@@ -11,7 +11,7 @@
        Stargazes :star:
     </h2>
   </div>
-  <img align="center" src="/github-stargazers.svg" alt="Stargazers" width="100%">
+   <img align="center" src="/github-habits.svg" alt="Topic" width="100%">
 </div>
 
 
