@@ -2,13 +2,19 @@
 $imageUrl = "https://c4.wallpaperflare.com/wallpaper/966/989/139/shrek-movies-animated-movies-dreamworks-hd-wallpaper-preview.jpg"
 $imagePath = "$env:TEMP\doge.jpg"
 
-# Baixar a imagem
-Invoke-WebRequest -Uri $imageUrl -OutFile $imagePath
+# Tentar baixar a imagem com Invoke-WebRequest
+try {
+    Invoke-WebRequest -Uri $imageUrl -OutFile $imagePath -ErrorAction Stop
+    Write-Host "Imagem baixada com sucesso."
+}
+catch {
+    Write-Host "Invoke-WebRequest falhou, tentando curl..."
+    curl -Uri $imageUrl -OutFile $imagePath
+    Write-Host "Imagem baixada com curl."
+}
 
 # Verificar se a imagem foi baixada
 if (Test-Path $imagePath) {
-    Write-Host "Imagem baixada com sucesso."
-
     # Define o papel de parede no registro
     reg add "HKCU\Control Panel\Desktop" /v WallPaper /t REG_SZ /d $imagePath /f
 
