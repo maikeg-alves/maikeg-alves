@@ -92,9 +92,13 @@ function Install-File-Silent {
             Start-Process "msiexec.exe" -ArgumentList "/i `"$filePath`" /quiet /norestart" -Wait -ErrorAction Stop
         }
         elseif ($extension -eq ".exe") {
-            Write-Host "Instalando $name (EXE - silencioso)..." -ForegroundColor Yellow
-            # Argumentos comuns para instaladores EXE.
-            Start-Process $filePath -ArgumentList "/S /silent /verysilent /quiet /norestart" -Wait -ErrorAction Stop
+            if ($name -eq "AnyDesk") {
+                Write-Host "Instalando $name (EXE - silencioso para todos os usuários)..." -ForegroundColor Yellow
+                Start-Process $filePath -ArgumentList "--install `"C:\Program Files\AnyDesk`" --start-with-win --create-desktop-icon --silent" -Wait -ErrorAction Stop
+            } else {
+                Write-Host "Instalando $name (EXE - silencioso)..." -ForegroundColor Yellow
+                Start-Process $filePath -ArgumentList "/silent /verysilent /quiet /norestart" -Wait -ErrorAction Stop
+            }
         }
         else {
             throw "Formato não reconhecido"
