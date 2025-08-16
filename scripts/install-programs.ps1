@@ -92,13 +92,19 @@ function Install-File-Silent {
             Start-Process "msiexec.exe" -ArgumentList "/i `"$filePath`" /quiet /norestart" -Wait -ErrorAction Stop
         }
         elseif ($extension -eq ".exe") {
-            if ($name -eq "AnyDesk") {
-                Write-Host "Instalando $name (EXE - silencioso para todos os usuários)..." -ForegroundColor Yellow
-                Start-Process $filePath -ArgumentList "--install `"C:\Program Files\AnyDesk`" --start-with-win --create-desktop-icon --silent" -Wait -ErrorAction Stop
-            } else {
-                Write-Host "Instalando $name (EXE - silencioso)..." -ForegroundColor Yellow
-                Start-Process $filePath -ArgumentList "/silent /verysilent /quiet /norestart" -Wait -ErrorAction Stop
-            }
+            switch ($name) {
+                "AnyDesk" {
+                    Write-Host "Instalando AnyDesk (parâmetros oficiais)..." -ForegroundColor Yellow
+                    Start-Process $filePath -ArgumentList "--install `"C:\Program Files (x86)\AnyDesk`" --start-with-win --create-desktop-icon --silent" -Wait -ErrorAction Stop
+                }
+                "Google Drive" {
+                    Write-Host "Instalando Google Drive (instalação normal, sem silencioso)..." -ForegroundColor Yellow
+                    Start-Process $filePath -Wait -ErrorAction Stop
+                }
+                default {
+                    Write-Host "Instalando $name (EXE - sem parâmetros personalizados)..." -ForegroundColor Yellow
+                    Start-Process $filePath -Wait -ErrorAction Stop
+                }
         }
         else {
             throw "Formato não reconhecido"
