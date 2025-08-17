@@ -49,6 +49,10 @@ function Install-File-Silent {
                     Write-Host "Instalando Google Drive (instalação normal, sem silencioso)..." -ForegroundColor Yellow
                     Start-Process $filePath -Wait -ErrorAction Stop
                 }
+                "Ninite" {
+                   Write-Host "Instalando Ninite (instalação silenciosa)..." -ForegroundColor Yellow
+                   Start-Process $filePath -ArgumentList "/silent `"$env:SystemDrive\Installers\Ninite-report.txt`"" -Wait -ErrorAction Stop
+                }
                 default {
                     Write-Host "Instalando $name (EXE - sem parâmetros personalizados)..." -ForegroundColor Yellow
                     Start-Process $filePath -Wait -ErrorAction Stop
