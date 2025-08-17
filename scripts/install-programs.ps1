@@ -1,7 +1,7 @@
 # Lista de programas para instalar (MSI ou EXE, por URL ou Diretório)
 $apps = @(
-    @{ Name = "Ninite"; Url = ""; Path = "C:\Install\Ninite.exe" },
-    @{ Name = "PABX"; Url = "https://github.com/maikeg-alves/maikeg-alves/raw/refs/heads/main/softwares/ERAphone-3.21.4-PT.msi"; Path = "" }
+    @{ Name = "PABX"; Url = "https://github.com/maikeg-alves/maikeg-alves/raw/refs/heads/main/softwares/ERAphone-3.21.4-PT.msi"; Path = "" },
+    @{ Name = "Ninite"; Url = "https://github.com/maikeg-alves/maikeg-alves/raw/refs/heads/main/softwares/Ninite.exe"; Path = "" }
 )
 
 function Install-FromUrl {
@@ -54,7 +54,7 @@ function Install-File-Silent {
         }
         "Ninite" {
             Write-Host "Instalando Ninite (instalação silenciosa)..." -ForegroundColor Yellow
-            Start-Process $filePath -ArgumentList "/silent" -Wait -ErrorAction Stop
+            Start-Process $filePath -Wait -ErrorAction Stop
         }
         default {
             Write-Host "Instalando $name (EXE - sem parâmetros personalizados)..." -ForegroundColor Yellow
