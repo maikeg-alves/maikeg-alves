@@ -1,9 +1,10 @@
 # Lista de programas para instalar (MSI ou EXE, por URL ou Diretório)
 $apps = @(
-    @{ Name = "Google Chrome"; Url = "https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7BD6BFE8A1-7337-41CD-CBA0-9D9D7181EBE6%7D%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dtrue%26ap%3Dx64-stable-statsdef_0%26brand%3DGCEA/dl/chrome/install/googlechromestandaloneenterprise64.msi"; Path = "" },
+<#     @{ Name = "Google Chrome"; Url = "https://dl.google.com/tag/s/appguid%3D%7B8A69D345-D564-463C-AFF1-A69D9E530F96%7D%26iid%3D%7BD6BFE8A1-7337-41CD-CBA0-9D9D7181EBE6%7D%26browser%3D4%26usagestats%3D0%26appname%3DGoogle%2520Chrome%26needsadmin%3Dtrue%26ap%3Dx64-stable-statsdef_0%26brand%3DGCEA/dl/chrome/install/googlechromestandaloneenterprise64.msi"; Path = "" },
     @{ Name = "AnyDesk"; Url = "https://download.anydesk.com/AnyDesk.exe"; Path = "" },
-    @{ Name = "PABX"; Url = "https://github.com/maikeg-alves/maikeg-alves/raw/refs/heads/main/softwares/ERAphone-3.21.4-PT.msi"; Path = "" },
-    @{ Name = "Google Drive"; Url = ""; Path = "C:\Install\GoogleDriveSetup.exe" }
+    @{ Name = "Google Drive"; Url = ""; Path = "C:\Install\GoogleDriveSetup.exe" }, #>
+    @{ Name = "Ninite"; Url = ""; Path = "C:\Install\Ninite.exe" },
+    @{ Name = "PABX"; Url = "https://github.com/maikeg-alves/maikeg-alves/raw/refs/heads/main/softwares/ERAphone-3.21.4-PT.msi"; Path = "" }
 )
 
 function Install-FromUrl {
