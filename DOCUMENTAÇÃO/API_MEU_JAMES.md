@@ -34,7 +34,7 @@ A mensagem enviada deve estar relacionada a um **template do Meta Business** já
 ### Estrutura esperada do campo `msg`:
 ```json
 {
-  "nome_template": "areademanutencao_01092025",
+  "nome_template": "NOME DO TEMPLATE",
   "params": {}
 }
 ```
