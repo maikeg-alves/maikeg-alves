@@ -34,7 +34,7 @@ A mensagem enviada deve estar relacionada a um **template do Meta Business** já
 ### Estrutura esperada do campo `msg`:
 ```json
 {
-  "nome_template": "NOME DO TEMPLATE",
+  "nome_template": "NOME DO TEMPLATE DO META",
   "params": {}
 }
 ```
@@ -76,10 +76,10 @@ var options = {
   url: 'https://meujames.com/api/playsms',
   params: {
     op: 'pv',
-    u: 'seu_usuario_aqui',
-    h: 'seu_hash_aqui',
-    msg: '{"nome_template": "NOME DO TEMPLATE", "params": {}}',
-    to: '11997217411'
+    u: 'USUÁRIO DO MEU JAMES',
+    h: 'HASH PRINCIPAL',
+    msg: '{"nome_template": "NOME DO TEMPLATE DO META", "params": {}}',
+    to: 'NUMERO DO CLIENTE'
   },
   headers: { 'User-Agent': 'insomnia/11.6.0' }
 };
@@ -95,8 +95,7 @@ axios.request(options).then(function (response) {
 
 ## Observações Importantes
 1. **MSG** deve sempre seguir o formato de templates configurados no Meta Business;
-2. O campo **u (user)** deve ser configurado como o usuário principal da sua conta;
-3. O **REST principal** deve ser utilizado para requisições, e o REST secundário pode ser usado para autenticação e gerenciamento de contas;
+2. O campo **u (user)** deve ser configurado como o usuário principal da conta do **MEU JAMES**;
 4. O James não cria nem gerencia os templates, apenas encaminha as mensagens para o WhatsApp;
 5. É possível enviar para múltiplos números de uma só vez.
 
@@ -105,5 +104,5 @@ axios.request(options).then(function (response) {
 ## Conclusão
 Essa integração permite automatizar o envio de mensagens de forma escalável, aproveitando os templates do **Meta Business** e utilizando o James como camada intermediária de comunicação entre o sistema do cliente e o WhatsApp.
 
-> Para dúvidas adicionais, entre em contato com o suporte da plataforma Meu James.
+> Para dúvidas adicionais, entre em contato com a nossa equipe de ti
 
