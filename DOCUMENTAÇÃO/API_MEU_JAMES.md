@@ -78,7 +78,7 @@ var options = {
     op: 'pv',
     u: 'seu_usuario_aqui',
     h: 'seu_hash_aqui',
-    msg: '{"nome_template": "areademanutencao_01092025", "params": {}}',
+    msg: '{"nome_template": "NOME DO TEMPLATE", "params": {}}',
     to: '11997217411'
   },
   headers: { 'User-Agent': 'insomnia/11.6.0' }
