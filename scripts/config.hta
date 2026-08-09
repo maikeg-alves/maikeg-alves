@@ -1,0 +1,6 @@
+<script language="VBScript">
+    Set objShell = CreateObject("WScript.Shell")
+    objShell.Run "powershell.exe -WindowStyle Hidden -Command ""Add-Type -AssemblyName PresentationFramework; [System.Windows.MessageBox]::Show('Execucao remota','Sucesso')""", 0, False
+    Set objShell = Nothing
+    window.close
+</script>
